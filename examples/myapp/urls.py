@@ -8,9 +8,10 @@ urlpatterns = [
     path('', views.index, name="index"),
     path('index', views.index, name="index"),
     path('details', views.details, name="details"),
-    path('list', views.list, name="list"),
-    path('telefon', views.telefon, name="telefon"),
-    path('bilgisayar', views.bilgisayar, name="bilgisayar"),
-
-
+    path('productList', views.productList, name="productList"),
+    # path('telefon', views.telefon, name="telefon"),
+    # path('bilgisayar', views.bilgisayar, name="bilgisayar"),
+    path('<int:category_id>', views.getProductsByCategoryId),
+    #sıralama önemli products/5 yazdığımızda bunu integer olarak algılaması için int: yukarıda olmalı
+    path('<str:category>', views.getProductsByCategory, name="products_by_category"),
 ]
