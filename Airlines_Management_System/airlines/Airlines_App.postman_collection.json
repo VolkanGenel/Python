@@ -1,0 +1,757 @@
+{
+	"info": {
+		"_postman_id": "0678f52e-7abb-47e1-84ee-cfbced7ab6f4",
+		"name": "Airlines_App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "26479286"
+	},
+	"item": [
+		{
+			"name": "Airplane",
+			"item": [
+				{
+					"name": "Create_Airplane_Big",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n        \"id\": 5,\n        \"tail_number\": \"Big\",\n        \"model\": \"Latest\",\n        \"capacity\": 2000,\n        \"production_year\": 2000,\n        \"status\": true\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/airlines/airplanes"
+					},
+					"response": []
+				},
+				{
+					"name": "Create_Airplane_Small",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n        \"id\": 5,\n        \"tail_number\": \"Small\",\n        \"model\": \"Old\",\n        \"capacity\": 2,\n        \"production_year\": 1920,\n        \"status\": true\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/airlines/airplanes"
+					},
+					"response": []
+				},
+				{
+					"name": "Create_Airplane_SmallX",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n        \"tail_number\": \"SmallX\",\n        \"model\": \"Old\",\n        \"capacity\": 3,\n        \"production_year\": 1923\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/airlines/airplanes"
+					},
+					"response": []
+				},
+				{
+					"name": "List_All_Airplane",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/airlines/airplanes"
+					},
+					"response": []
+				},
+				{
+					"name": "Get_Airplane_By_Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/airlines/airplanes/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Update_Airplane",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n        \"tail_number\": \"Small-1\",\n        \"capacity\": 4\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/airlines/airplanes/4"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete_Airplane_By_Id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/airlines/airplanes/6"
+					},
+					"response": []
+				},
+				{
+					"name": "List_All_Flights_At_Airplane",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/airlines/airplanes/1/flights"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Flight",
+			"item": [
+				{
+					"name": "Create_Flight",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"flight_number\": \"123SDAX\",\n    \"departure\": \"Ankara\",\n    \"destination\": \"Istanbul\",\n    \"departure_time\": \"14-12-2024 17:00:00\",\n    \"arrival_time\": \"14-12-2024 18:00:00\",\n    \"airplane_id\": 1\n}  ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/airlines/flights"
+					},
+					"response": []
+				},
+				{
+					"name": "Create_Flight_Second",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"flight_number\": \"IN8123SDAX\",\n    \"departure\": \"Istanbul\",\n    \"destination\": \"New York\",\n    \"departure_time\": \"18-12-2024 17:00:00\",\n    \"arrival_time\": \"19-12-2024 05:00:00\",\n    \"airplane_id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/airlines/flights"
+					},
+					"response": []
+				},
+				{
+					"name": "Create_Flight_Third",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"flight_number\": \"IN3AGYAX\",\n    \"departure\": \"Ankara\",\n    \"destination\": \"London\",\n    \"departure_time\": \"09-12-2024 21:09:59\",\n    \"arrival_time\": \"09-12-2024 21:10:00\",\n    \"airplane_id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/airlines/flights"
+					},
+					"response": []
+				},
+				{
+					"name": "List_All_Flights",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/airlines/flights"
+					},
+					"response": []
+				},
+				{
+					"name": "Filter_Departure_List_All_Flights",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/airlines/flights?departure=Ankara",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"airlines",
+								"flights"
+							],
+							"query": [
+								{
+									"key": "departure",
+									"value": "Ankara"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Filter_Destination_List_All_Flights",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/airlines/flights?destination=London",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"airlines",
+								"flights"
+							],
+							"query": [
+								{
+									"key": "destination",
+									"value": "London"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Filter_D_Time_Equals_List_All_Flights",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/airlines/flights?departure_time=2024-12-18T17:00:00",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"airlines",
+								"flights"
+							],
+							"query": [
+								{
+									"key": "departure_time",
+									"value": "2024-12-18T17:00:00"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Filter_D_Time_Greater_List_All_Flights",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/airlines/flights?departure_time__gt=2024-12-14T17:00:00",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"airlines",
+								"flights"
+							],
+							"query": [
+								{
+									"key": "departure_time__gt",
+									"value": "2024-12-14T17:00:00"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Filter_D_Time_Less_List_All_Flights",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/airlines/flights?departure_time__lt=2024-12-14T17:00:00",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"airlines",
+								"flights"
+							],
+							"query": [
+								{
+									"key": "departure_time__lt",
+									"value": "2024-12-14T17:00:00"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Filter_D_Time_Between_List_All_Flights",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/airlines/flights?departure_time__lt=2024-12-14T17:00:00&departure_time__gt=2024-12-10T17:00:00",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"airlines",
+								"flights"
+							],
+							"query": [
+								{
+									"key": "departure_time__lt",
+									"value": "2024-12-14T17:00:00"
+								},
+								{
+									"key": "departure_time__gt",
+									"value": "2024-12-10T17:00:00"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Filter_A_Time_Greater_List_All_Flights",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/airlines/flights?arrival_time__gt=2024-12-14T17:00:00",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"airlines",
+								"flights"
+							],
+							"query": [
+								{
+									"key": "arrival_time__gt",
+									"value": "2024-12-14T17:00:00"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Filter_All_Once_List_All_Flights",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/airlines/flights?departure_time__lt=2024-12-14T17:00:00&departure_time__gt=2024-12-10T17:00:00&arrival_time__gt=2024-12-10T17:00:00&departure=Ankara&arrival=London",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"airlines",
+								"flights"
+							],
+							"query": [
+								{
+									"key": "departure_time__lt",
+									"value": "2024-12-14T17:00:00"
+								},
+								{
+									"key": "departure_time__gt",
+									"value": "2024-12-10T17:00:00"
+								},
+								{
+									"key": "arrival_time__gt",
+									"value": "2024-12-10T17:00:00"
+								},
+								{
+									"key": "departure",
+									"value": "Ankara"
+								},
+								{
+									"key": "arrival",
+									"value": "London"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get_Flight_By_Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/airlines/flights/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Update_Flight",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n        \"departure\": \"Ankara\",\n        \"destination\": \"Izmir\",\n        \"departure_time\": \"12-12-2024 17:00:00\",\n        \"arrival_time\": \"12-12-2024 18:20:00\"\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/airlines/flights/7"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete_Flight_By_Id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/airlines/flights/10"
+					},
+					"response": []
+				},
+				{
+					"name": "List_All_Reservations_At_Flight",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/airlines/flights/1/reservations"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reservation",
+			"item": [
+				{
+					"name": "Create_Reservation",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n        \"passenger_name\": \"Volkan Genel Yeni Yeni\",\n        \"passenger_email\": \"volkangenel@hotmail.com\",\n        \"flight\": 4\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/airlines/reservations"
+					},
+					"response": []
+				},
+				{
+					"name": "List_All_Reservations",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/airlines/reservations"
+					},
+					"response": []
+				},
+				{
+					"name": "Get_Reservation_By_Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/airlines/reservations"
+					},
+					"response": []
+				},
+				{
+					"name": "Update_Reservation",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\n    {\n        \"passenger_name\": \"Volkan Genel\",\n        \"passenger_email\": \"volkangenel@hotmail.com\",\n        \"flight\": 3,\n        \"status\": true\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:8000/airlines/reservations/1"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
